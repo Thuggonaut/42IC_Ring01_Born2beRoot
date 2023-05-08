@@ -15,8 +15,8 @@
 - Step 7: Creating Groups & Users
 - Step 8: Configuring your VM - User Priviledges
 - Step 9: Configuring your VM - Script Monitoring & Crontab
-- Step 10: Evaluation Checklist and Testing
-- Step 11: Retrieve the signature of your machine’s virtual disk
+- Step 10: Evaluation Checklist & Testing
+- Step 11: Retrieve the Signature of your machine’s virtual disk
 - Step 12: Evaluation Questions & Answers
 
 ## Step 1: Download the Debian installer for your Virtual Machine (VM)
