@@ -29,7 +29,7 @@
 - `cd sgoinfre/students`
 - `mkdir <your_intra_usename>`
 - `chmod 700 <your_intra_usename>`
-2. Find your Debian download from Step 1.1 and put that download in this `sgoinfre/students/<your_intra_usename>` directory that you have just created (in iTerm2, `open .` to open/find the directory, and drag/drop your Debian download in there). 
+2. Find your Debian download from Step 1.1 and put that download in this `sgoinfre/students/<your_intra_usename>` directory that you have just created (_in iTerm2,_ `open .` _to open/find the directory, and drag/drop your Debian download in there_). 
 
 ### 1.3: Virtual Box
 1. Open the Virtual Box application
