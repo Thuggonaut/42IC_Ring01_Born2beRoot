@@ -112,6 +112,7 @@
     - Partition settings: `Mount point:     /`
     - Mount point for this partition: `/boot - static files of the boot loader`
     - Partition settings: `Done setting up the partition`
+    
    🔸
     - Select `pri/log 8.6 GB FREE SPACE`
     - How to use this free space: `Create a new partition`
@@ -120,6 +121,7 @@
     - Partition settings: `Mount point:     /`
     - Mount point for this partition: `Do not mount it`
     - Partition settings: `Done setting up the partition`
+    
    🔸
     - Select `Configure encrypted volumes`
     - Write changes to disk and configure encrypted volumes?: `Yes`
@@ -127,12 +129,14 @@
     - Devices to encrypt: using <Space bar> to select/de-select, ensure that: 
           - `[ ] /dev/sda1` is de-selected
           - `[*] /dev/sda5` is selected 
-
+   
+   🔸
     - Select `Done setting up the partitions`
     - Encryption configuration actions: `Finish`
     - Really erase the data on SCSI1 (0,0,0), partition #5 (sda)?: `Yes`
     - Encryption passphrase: Personally, I used the same password set previously, x2, to avoid forgetting it.
 
+   🔸
     - Select `Configure the Logical Volume Manager`
     - Write the changes to disks and configure LVM?: `Yes`
     - LVM configuration action: `Create volume group`
@@ -141,40 +145,114 @@
           - `[*] /dev/mapper/sda5_crypt` is selected
           - `[ ] /dev/sda1` is de-selected
     
+   🔸
     - LVM configuration action: `Create logical volume`
     - Volume group: `LVMGroup`
     - Logical volume name: `root`
     - Logical volume size: `2G`
     
+   🔸
     - LVM configuration action: `Create logical volume`
     - Volume group: `LVMGroup`
     - Logical volume name: `swap`
     - Logical volume size: `1024MB`
     
+   🔸
     - LVM configuration action: `Create logical volume`
     - Volume group: `LVMGroup`
     - Logical volume name: `home`
     - Logical volume size: `1G`
     
+   🔸
     - LVM configuration action: `Create logical volume`
     - Volume group: `LVMGroup`
     - Logical volume name: `var`
     - Logical volume size: `1G`
     
+   🔸
     - LVM configuration action: `Create logical volume`
     - Volume group: `LVMGroup`
     - Logical volume name: `srv`
     - Logical volume size: `1G`
     
+   🔸
     - LVM configuration action: `Create logical volume`
     - Volume group: `LVMGroup`
     - Logical volume name: `tmp`
     - Logical volume size: `1G`
     
+   🔸
     - LVM configuration action: `Create logical volume`
     - Volume group: `LVMGroup`
     - Logical volume name: `var-log` (_yes, type only one '-' which will be automatically updated to '--'_)
-    - Logical volume size: `2G`
-    - 
+    - Logical volume size: `1056MB`
+    - LVM configuration action: `Finish`
+    
+   🔸
+    - Under the line with "LV home" in it, select `#1`
+    - Partition settings: `Use as:    do not use`
+    - How to use this partition: `Ext4 journaling file system`
+    - Partition settings: `Mount point:   none`
+    - Mount point for this partition: `/home - user home directories`
+    - Partition settings: `Done setting up the partition`
+   
+   🔸
+    - Under the line with "LV root" in it, select `#1`
+    - Partition settings: `Use as:    do not use`
+    - How to use this partition: `Ext4 journaling file system`
+    - Partition settings: `Mount point:   none`
+    - Mount point for this partition: `/ - the root file system`
+    - Partition settings: `Done setting up the partition`
 
+   🔸
+    - Under the line with "LV srv" in it, select `#1`
+    - Partition settings: `Use as:    do not use`
+    - How to use this partition: `Ext4 journaling file system`
+    - Partition settings: `Mount point:   none`
+    - Mount point for this partition: `/srv - data for services provided by this system`
+    - Partition settings: `Done setting up the partition`
+   
+   🔸
+    - Under the line with "LV swap" in it, select `#1`
+    - Partition settings: `Use as:    do not use`
+    - How to use this partition: `swap area`
+    - Partition settings: `Done setting up the partition`
+   
+   🔸
+    - Under the line with "LV tmp" in it, select `#1`
+    - Partition settings: `Use as:    do not use`
+    - How to use this partition: `Ext4 journaling file system`
+    - Partition settings: `Mount point:   none`
+    - Mount point for this partition: `/tmp - temporary files`
+    - Partition settings: `Done setting up the partition`
+   
+   🔸
+    - Under the line with "LV var" in it, select `#1`
+    - Partition settings: `Use as:    do not use`
+    - How to use this partition: `Ext4 journaling file system`
+    - Partition settings: `Mount point:   none`
+    - Mount point for this partition: `/var - variable data`
+    - Partition settings: `Done setting up the partition`
 
+   🔸
+    - Under the line with "LV var-log" in it, select `#1`
+    - Partition settings: `Use as:    do not use`
+    - How to use this partition: `Ext4 journaling file system`
+    - Partition settings: `Mount point:   none`
+    - Mount point for this partition: `Enter manually`
+    - Mount point for this partition: `/var/log`
+    - Partition settings: `Done setting up the partition`
+    - At the end of the list, select `Finish partitioning and write changes to disk`
+    - Write the changes to disk?: `Yes`
+   
+9. Confugure the package manager:
+    - Scan another CD or DVD?: `No`
+    - Debian archive mirror country: `Australia`
+    - Debian archive mirror: `deb.debian.org`
+    - HTTP proxy information (blank for none): leave blank
+
+10. Software selection:
+    - Choose software to install: ensure all items are de-selected
+
+11. GRUB boot loader:
+    - Install the GRUB boot loader to the master boot record?: `Yes`
