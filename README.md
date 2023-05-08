@@ -12,10 +12,10 @@
    - Step 4: Starting & setting up your VM
    - Step 5: Connecting to SSH
    - Step 6: Configuring your VM - Password Policy
-   - Step 7: Creating Groups & Users
+   - Step 7: Creating user Groups
    - Step 8: Configuring your VM - User Priviledges
    - Step 9: Configuring your VM - Script Monitoring & Crontab
-   - Step 10: Evaluation Checklist & Testing
+   - Step 10: Self-evaluation Checklist & Testing
    - Step 11: Retrieve the Signature of your machine’s virtual disk
    - Step 12: Evaluation Questions & Answers
 
@@ -294,25 +294,83 @@
    
 ### 🔸 4.6: Installing & Configuring UFW (Uncomplicated Firewall)
 1. `sudo apt-get install ufw` to install UFW.
-2. `sudo ufw enable` to inable UFW.
+2. `sudo ufw enable` to enable UFW.
 3. `sudo ufw status numbered` to check the status of UFW.
 4. `sudo ufw allow ssh` to configure the Rules.
 5. `sudo ufw allow 4242` to configure the Port Rules.
 6. `sudo ufw status numbered` to check the status of UFW 4242 Port.
    
 ## 🔷 Step 5: Connecting to SSH
-Note: press `<command>` on your Apple Keyboard and your mouse should re-appear
+Note: press `<command>` on your Apple Keyboard & your mouse should re-appear
 1. Go to your Virtual Box Program.
 2. Click on your Virtual Machine and go to `Settings`
     - Go to `Network`
     - Select `Adapter 1`
     - Select `Advanced`
     - Click on `Port Forwarding`
-    - Change the Host Port and Guest Port to `4242`:
+    - Change the Host Port & Guest Port to `4242`:
          - Name: Rule 1
          - Protocol: TCP
          - Host IP: (_blank_)
          - Host Port: 4224
          - Guest IP: (_blank_)
          - Guest Port: 4242
+    - `Ok`
+3. Go back to your Virtual Machine.
+4. `sudo systemctl restart ssh` to restart your SSH Server.
+5. `sudo service sshd status` to check your SSH Status.
+6. Open an iTerm & type `ssh <your_intra_username>@127.0.0.1 -p 4242`
+    - Note: In case an error occurs, type `rm ~/.ssh/known_hosts` in your iTerm & then retype `ssh <your_intra_username>@127.0.0.1 -p 4242`
+7. Type `exit` to quit your SSH iTerm Connection.
+
+## 🔷 Step 6: Configuring your VM - Password Policy
+1. `sudo apt-get install libpam-pwquality` to install Password Quality Checking Library
+2. `sudo vim /etc/pam.d/common-password`
+3. Find this line: `password		requisite		pam_deny.so`
+    - Add to the end of that line `minlen=10 ucredit=-1 dcredit=-1 maxrepeat=3 reject_username difok=7 enforce_for_root`
+    - The line should now look like this: `password  requisite     pam_pwquality.so  retry=3 minlen=10 ucredit=-1 dcredit=-1 maxrepeat=3 reject_username difok=7             enforce_for_root`
+4. Save and Exit Vim
+5. `sudo vim /etc/login.defs` to configure the Password Policy.
+6. Find this part `PASS_MAX_DAYS 9999 PASS_MIN_DAYS 0 PASS_WARN_AGE 7`. Edit that part to: 
+    - `PASS_MAX_DAYS 30` 
+    - `PASS_MIN_DAYS 2`
+    - `PASS_WARN_AGE 7`
+7. `sudo reboot` to reboot the change affects.
    
+## 🔷 Step 7: Creating user Groups
+
+### 🔸 7.1: Creating a group
+1. `sudo groupadd user42` to create the group 'user42`.
+2. `getent group` to check if the group has been created.
+
+### 🔸 7.2: Group allocation
+1. `sudo usermod -aG user42 <your_intra_username> to add your username to the group 'user42' as per subject requirements. 
+2. `getent group user42` to check if the user is in the group.
+3. `cut -d: -f1 /etc/passwd` to check all local users.
+
+## 🔷 Step 8: Configuring your VM - User Priviledges
+
+### 🔸 8.1: Creating the sudo.log  
+1. `cd ~/../`
+2. `cd var/log`
+3. `mkdir sudo` 
+4. `cd sudo`
+5. `touch sudo.log`
+6. `cd ~/../`
+
+### 🔸 8.2: Configuring the Sudoers Group
+1. `sudo visudo` to open to Sudoers file.
+2. Edit your sudoers file by adding the rest of the defaults so it should read like this:
+   `Defaults	env_reset
+    Defaults	mail_badpass
+    Defaults	secure_path="/usr/local/sbin:/usr/local/bin:/usr/bin:/sbin:/bin"
+    Defaults	badpass_message="Password is wrong, please try again!"
+    Defaults	passwd_tries=3
+    Defaults	logfile="/var/log/sudo/sudo.log"
+    Defaults	log_input, log_output
+    Defaults	requiretty'
+  
+   - Step 9: Configuring your VM - Script Monitoring & Crontab
+   - Step 10: Self-evaluation Checklist & Testing
+   - Step 11: Retrieve the Signature of your machine’s virtual disk
+   - Step 12: Evaluation Questions & Answers
