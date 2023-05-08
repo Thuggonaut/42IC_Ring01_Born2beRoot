@@ -481,7 +481,7 @@ Note: I recommend going through the checklist yourself to ensure everything work
 - [ ] `sudo hostnamectl set-hostname <new_hostname>` evaluator to modify the hostname by replacing the login with theirs. Then, `sudo reboot` to restart the VM.
 - [ ] On restart, if the hostname has not been updated, the evaluation stops here. Otherwise, the student logs back in (not the evaluator).
 - [ ] `sudo hostnamectl set-hostname <new_hostname>` to restore the VM to the original hostname. Then, `sudo reboot` to restart the VM.
-- [ ] `lsblk` to view the VM's partitions. Compare the output with the example given in the subject.pdf (if there are bonuses, refer to the bonus example).
+- [ ] `lsblk` to view the VM's partitions. Compare the output with the example given in the subject.pdf.
 
 	
 ### 🔸 10.7: Sudo
