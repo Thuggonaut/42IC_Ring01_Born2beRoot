@@ -129,9 +129,50 @@
     - Select `Done setting up the partitions`
     - Encryption configuration actions: `Finish`
     - Really erase the data on SCSI1 (0,0,0), partition #5 (sda)?: `Yes`
-
     - Encryption passphrase: Personally, I used the same password set previously, x2, to avoid forgetting it.
 
     - Select `Configure the Logical Volume Manager`
+    - Write the changes to disks and configure LVM?: `Yes`
+    - LVM configuration action: `Create volume group`
+    - Volume group name: `LVMGroup`
+    - Devices for th new volume group:
+          - `[*] /dev/mapper/sda5_crypt` is selected
+          - `[ ] /dev/sda1` is de-selected
+    
+    - LVM configuration action: `Create logical volume`
+    - Volume group: `LVMGroup`
+    - Logical volume name: `root`
+    - Logical volume size: `2G`
+    
+    - LVM configuration action: `Create logical volume`
+    - Volume group: `LVMGroup`
+    - Logical volume name: `swap`
+    - Logical volume size: `1024MB`
+    
+    - LVM configuration action: `Create logical volume`
+    - Volume group: `LVMGroup`
+    - Logical volume name: `home`
+    - Logical volume size: `1G`
+    
+    - LVM configuration action: `Create logical volume`
+    - Volume group: `LVMGroup`
+    - Logical volume name: `var`
+    - Logical volume size: `1G`
+    
+    - LVM configuration action: `Create logical volume`
+    - Volume group: `LVMGroup`
+    - Logical volume name: `srv`
+    - Logical volume size: `1G`
+    
+    - LVM configuration action: `Create logical volume`
+    - Volume group: `LVMGroup`
+    - Logical volume name: `tmp`
+    - Logical volume size: `1G`
+    
+    - LVM configuration action: `Create logical volume`
+    - Volume group: `LVMGroup`
+    - Logical volume name: `var-log` (_yes, type only one '-' which will be automatically updated to '--'_)
+    - Logical volume size: `2G`
+    - 
 
 
