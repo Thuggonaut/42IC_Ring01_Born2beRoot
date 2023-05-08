@@ -265,8 +265,8 @@
 ### 🔸 4.1: Starting up your VM
 1. At every start up, use your encryption password.
 2. You can either:
-    - Login as `root`
-    - Login as `<your_intra_username>, then later use `su -` to log in as root if required.
+    - Login as `root` or
+    - Login as `<your_intra_username>`, then later use `su -` to log in as root if required.
 
 ### 🔸 4.2: Installing Sudo
 1. Ensure you are logged in as root: `su -`
