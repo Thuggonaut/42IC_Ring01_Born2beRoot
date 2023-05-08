@@ -5,7 +5,7 @@
 - Debian is the chosen Operating System for this project.
 - The Mandatory part of the subject.pdf involves using the Guided Partitioning Method of the Debian installation. The Bonus part of the subject.pdf involves using the Manual Partitioning Method. This guide has instructions for the Manual Partitioning Method, which I recommend you do from the start, thus passing you both the Mandatory part, and 1/3 of the Bonus part of Born2beRoot. 
 
-## Outline of Steps:
+## 🔷 Outline of Steps:
 - Step 1: Download the Debian installer for your Virtual Machine (VM)
 - Step 2: Installing your VM
 - Step 3: Setting up your VM partitions
