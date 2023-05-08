@@ -99,6 +99,7 @@
     - Choose a password for the new user: use the same password as "Root password".
 
 8. Partition disks:
+   🔸
     - Select `Manual`
     - Select `SCSI1 (0,0,0) (sda) 8.6 GB ATA VBOX HARDDISK`
     - Create new empty partition table on this device?: `Yes`
@@ -110,7 +111,8 @@
     - Partition settings: `Mount point:     /`
     - Mount point for this partition: `/boot - static files of the boot loader`
     - Partition settings: `Done setting up the partition`
-
+   
+   🔸
     - Select `pri/log 8.6 GB FREE SPACE`
     - How to use this free space: `Create a new partition`
     - New partition size: `max`
@@ -118,7 +120,8 @@
     - Partition settings: `Mount point:     /`
     - Mount point for this partition: `Do not mount it`
     - Partition settings: `Done setting up the partition`
-
+   
+   🔸
     - Select `Configure encrypted volumes`
     - Write changes to disk and configure encrypted volumes?: `Yes`
     - Encryption configuration actions: `Create encrypted volumes`
