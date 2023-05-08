@@ -17,7 +17,6 @@
    - Step 9: Configuring your VM - Script Monitoring & Crontab
    - Step 10: Self-evaluation Checklist & Testing
    - Step 11: Retrieve the Signature of your machine’s virtual disk
-   - Step 12: Evaluation Questions & Answers
 
 ## 🔷 Step 1: Download the Debian installer for your Virtual Machine (VM)
 
@@ -28,9 +27,9 @@
 ### 🔸 1.2: VM Directory (For 42Adelaide Students)
 1. In iTerm2:
     - `cd sgoinfre/students`
-    - `mkdir <your_intra_usename>`
-    - `chmod 700 <your_intra_usename>`
-2. Find your Debian download file from Step 1.1 and put that download in this `sgoinfre/students/<your_intra_usename>` directory that you have just created (_in iTerm2,_ `open .` _to open/find the directory, and drag/drop your Debian download file in there_). 
+    - `mkdir <your_intra_username>`
+    - `chmod 700 <your_intra_username>`
+2. Find your Debian download file from Step 1.1 and put that download in this `sgoinfre/students/<your_intra_username>` directory that you have just created (_in iTerm2,_ `open .` _to open/find the directory, and drag/drop your Debian download file in there_). 
 
 ### 🔸 1.3: Virtual Box
 1. Open the Virtual Box application
@@ -40,7 +39,7 @@
 
 2. Name and operating system:
     - Name: e.g. `Born2beRoot`
-    - Machine Folder: `/sgoinfre/students/<your_intra_usename>` (_Do not type this in, use the drop down option._)
+    - Machine Folder: `/sgoinfre/students/<your_intra_username>` (_Do not type this in, use the drop down option._)
     - Type: `Linux `
     - Version: `Debian (64-bit)`
     - `Continue`
@@ -428,15 +427,103 @@ Note: press `<command>` on your Apple Keyboard & your mouse should re-appear
 1. `sudo crontab -u root -e` to open the crontab and add a rule
 2. At the end of the crontab, type `*/10 * * * * /usr/local/bin/monitoring.sh` this means that every 10 mins, the monitoring.sh script will be broadcasted.                                                                                           
 ## 🔷 Step 10: Self-evaluation Checklist & Testing
-Note: I recommend going through the checklist yourself to ensure everything works as it should, before retrieving the signature of your machines' virtual disk.
+Note: I recommend going through the checklist yourself to ensure everything works as it should, before retrieving the signature of your machines virtual disk.
 
 ### 🔸 10.1: Preliminary tests (for your peer evaluation)
-- [x] Git repository is sucessfully cloned.
+- [ ] Git repository is sucessfully cloned.
 - [ ] The Git repository contains a signature.txt file.
-	
-	
-- Step 11: Retrieve the Signature of your machine’s virtual disk 
-   - Step 12: Evaluation Questions & Answers 
-                                                                                       
+- [ ] `cat signature.txt` then 
+	`cd/sgoinfre/students/<your_intra_username>/<your_VM_name>` then
+	`cd <your_VM_name>` then
+	`shasum <your_VM_name>.vdi`
+	The signature.txt against the students “.vdi” file is identical. 
+- [ ] Clone the VM then start it up. 
 
-   
+
+### 🔸 10.2: General VM Setup
+- [ ] `sudo ufw status` checks UFW service is started. Look for `status: active`
+- [ ] `sudo systemctl status ssh` checks SSH service is started.
+- [ ] `lsb_release -a || cat /etc/os-release` checks the chosen operating system (Debian or Rocky).
+
+
+### 🔸 10.3: Mandatory Part (for your peer evaluation)
+- [ ] During the defense, a script must display all information every 10 minutes.
+- [ ] What is a Virtual Machine, & how does it work?
+- [ ] What are the differences between Rocky & Debian?
+- [ ] What is your choice of operating system & why?
+- [ ] For Debian: what are the difference between aptitude and apt? What is APPArmor?
+- [ ] All explanations are satisfactory (or evaluation stops here).
+- [ ] What is LVM & what does it do?
+- [ ] What is SSH & the value of using it?
+- [ ] What is UFW & the value of using it?
+- [ ] What is sudo?
+
+	
+### 🔸 10.4: Users & groups
+- [ ] `getent group sudo` the students intra username must be present in the group `sudo`.
+- [ ] `getent group user42` the students intra username must be present in the group `user42`.
+- [ ] `sudo adduser <new_user>` evaluator to create a new user e.g. testuser.
+- [ ] `sudo groupadd <groupname>` evaluator to create a new group e.g. testgroup.
+- [ ] `sudo usermod -aG <groupname> <username>` evaluator to add the new user to the new group.
+- [ ] `groups <username>` checks the group the user belongs to.
+
+
+### 🔸 10.5: Password policy
+- [ ] `sudo chage -l <username>` checks the newly created user password follows the required policy (30 days max, 2 days min, 7 days warning).
+- [ ] How do you implement the password policy?
+- [ ] What are the advantages & disadvantages of the password policy?
+
+	
+### 🔸 10.6: Hostname and partitions
+- [ ] `hostnamectl` checks the hostname of the machine is correctly formatted as follows: `<student_login>42`
+- [ ] `sudo hostnamectl set-hostname <new_hostname>` evaluator to modify the hostname by replacing the login with theirs. Then, `sudo reboot` to restart the VM.
+- [ ] On restart, if the hostname has not been updated, the evaluation stops here. Otherwise, the student logs back in (not the evaluator).
+- [ ] `sudo hostnamectl set-hostname <new_hostname>` to restore the VM to the original hostname. Then, `sudo reboot` to restart the VM.
+- [ ] `lsblk` to view the VM's partitions. Compare the output with the example given in the subject.pdf (if there are bonuses, refer to the bonus example).
+
+	
+### 🔸 10.7: Sudo
+- [ ] `sudo visudo` the student shows how to access the sudoers file.	
+- [ ] What is the sudoers file, & its purpose? 
+- [ ] `cd /var/log/sudo` verify the “/var/log/sudo/” directory exists.
+- [ ] `ls` should show sudo.log file exists. 
+- [ ] `cat sudo.log` should display a history of the sudo command executions.
+- [ ] Run any command using `sudo`. Check if the sudo.lg file in the “/var/log/sudo/” directory have been updated.
+
+
+### 🔸 10.8: UFW
+- [ ] `sudo ufw status numbered` Lists the active rules in UFW. A rule must exist for port 4242.
+- [ ] `sudo ufw allow 8080` Adds a new rule to open port 8080. `sudo ufw status numbered` to check that this rule has been added by listing the active rules.
+- [ ] Delete this new rule with the help of the student.
+	`sudo ufw delete 6`
+	`sudo ufw delete 3`
+	
+
+### 🔸 10.9: SSH
+- [ ] `sudo service ssh status` checks if its active & uses port 4242.
+- [ ] In an iterm2, `ssh <new_user>@127.0.0.1 -p 4242` evaluator to connect to SSH with their username. If connection successful, `exit` to exit the connection. 
+- [ ] `ssh <your_intra_username42>@127.0.0.1 -p 4242` checks that the root user cannot connect to SSH. An error message "permission denied" should be displayed.
+
+	
+### 🔸 10.10: Script Monitoring
+- [ ] What is the monitoring.sh script?
+- [ ] What is the `wall` command?
+- [ ] Ask to see the student's code for the script. `cd /usr/local/bin` then, `vim monitoring.sh`
+- [ ] What is Cron & its purpose?
+- [ ] `sudo crontab -u root -e` (***change 10 value to 1***)
+- [ ] The student being evaluated should make the script stop or start running without modifying the script itself. To check this, `sudo reboot` to restart the VM.
+	- `sudo /etc/init.d/cron stop`	
+	- `sudo /etc/init.d/cron start`
+
+
+## 🔷 Step 11: Retrieve the Signature of your machine’s virtual disk 
+1. `log out` & `Power off` your machine to close your VM. ⚠️ DO NOT RETRIEVE YOUR DISK'S SIGNATURE WITHOUT COMPLETING THIS STEP!⚠️
+2. `cd /sgoinfre/students/<your_intra_username>/<your_VM_name>` to go into the directory where your .vdi file is.
+2. `ls` to view the .vdi file.
+3. `shasum <your_VM_name>.vdi` to retrieve your VM's disk signature.
+4. Copy and paste this into a `signature.txt` file at the root of your Git repository. 
+5. Clone your VM from VirtualBox.
+5. Repeat steps 2 - 3 to ensure your `signature.txt` is identical to your `<your_VM_name>.vdi` before pushing for evaluation. 
+Note: Ensure your evaluator starts your VM Clone for evaluation to prevent your disk's signature from changing for the next evaluation. 
+	
+# 😎 Good luck!
