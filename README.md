@@ -328,7 +328,7 @@ Note: press `<command>` on your Apple Keyboard & your mouse should re-appear
 2. `sudo vim /etc/pam.d/common-password`
 3. Find this line: `password		requisite		pam_deny.so`
     - Add to the end of that line `minlen=10 ucredit=-1 dcredit=-1 maxrepeat=3 reject_username difok=7 enforce_for_root`
-    - The line should now look like this: `password  requisite     pam_pwquality.so  retry=3 minlen=10 ucredit=-1 dcredit=-1 maxrepeat=3 reject_username difok=7             enforce_for_root`
+             - The line should now look like this: `password  requisite     pam_pwquality.so  retry=3 minlen=10 ucredit=-1 dcredit=-1 maxrepeat=3 reject_username difok=7 enforce_for_root`
 4. Save and Exit Vim
 5. `sudo vim /etc/login.defs` to configure the Password Policy.
 6. Find this part `PASS_MAX_DAYS 9999 PASS_MIN_DAYS 0 PASS_WARN_AGE 7`. Edit that part to: 
