@@ -512,7 +512,7 @@ Note: I recommend going through the checklist yourself to ensure everything work
 - [ ] What is the `wall` command?
 - [ ] Ask to see the student's code for the script. `cd /usr/local/bin` then, `vim monitoring.sh`
 - [ ] What is Cron & its purpose?
-- [ ] `sudo crontab -u root -e` (***change 10 value to 1***)
+- [ ] `sudo crontab -u root -e` (change the `10` value to `1`)
 - [ ] The student being evaluated should make the script stop or start running without modifying the script itself. To check this, `sudo reboot` to restart the VM.
 	- `sudo /etc/init.d/cron stop`	
 	- `sudo /etc/init.d/cron start`
