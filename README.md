@@ -72,7 +72,6 @@
 - `Open`
 - `Ok`
 
-
 ## Step 3: Setting up your VM partitions
 1. Go to `Start` (_The green arrow_)
 Note: you will only be able to use your Keyboard to operate your Virtual Machine.
@@ -130,7 +129,7 @@ Note: to increase the size of your VM window, go to the menu bar and either:
 - Encryption configuration actions: `Finish`
 - Really erase the data on SCSI1 (0,0,0), partition #5 (sda)?: `Yes`
 
-- kk
+- Encryption passphrase: 
   
 
 
