@@ -522,7 +522,7 @@ Note: I recommend going through the checklist yourself to ensure everything work
 1. `log out` & `Power off` your machine to close your VM. ⚠️ DO NOT RETRIEVE YOUR DISK'S SIGNATURE WITHOUT COMPLETING THIS STEP!⚠️
 2. In iTerm2, `cd /sgoinfre/students/<your_intra_username>/<your_VM_name>` to go into the directory where your .vdi file is.
 2. `ls` to view the .vdi file.
-3. `shasum <your_VM_name>.vdi` to retrieve your VM's disk signature.
+3. `shasum <your_VM_name>.vdi` to retrieve your VM's disk signature. (This can take up to several minutes.)
 4. Copy and paste this into a `signature.txt` file at the root of your Git repository. 
 5. Clone your VM from VirtualBox.
 5. Repeat steps 2 - 3 to ensure your `signature.txt` is identical to your `<your_VM_name>.vdi` before pushing for evaluation. 
