@@ -508,7 +508,7 @@ Note: I recommend going through the checklist yourself to ensure everything work
 
 	
 ### 🔸 10.10: Script Monitoring
-- [ ] What is the monitoring.sh script?
+- [ ] What is the `monitoring.sh script`?
 - [ ] What is the `wall` command?
 - [ ] Ask to see the student's code for the script. `cd /usr/local/bin` then, `vim monitoring.sh`
 - [ ] What is Cron & its purpose?
