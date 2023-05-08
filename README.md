@@ -329,7 +329,7 @@ Note: press `<command>` on your Apple Keyboard & your mouse should re-appear
 3. Find this line: `password		requisite		pam_deny.so`
     - Add to the end of that line `minlen=10 ucredit=-1 dcredit=-1 maxrepeat=3 reject_username difok=7 enforce_for_root`
     - The line should now look like this: `password  requisite     pam_pwquality.so  retry=3 minlen=10 ucredit=-1 dcredit=-1 maxrepeat=3 reject_username difok=7 enforce_for_root`
-4. Save and Exit Vim
+4. Exit & Save Vim
 5. `sudo vim /etc/login.defs` to configure the Password Policy.
 6. Find this part `PASS_MAX_DAYS 9999 PASS_MIN_DAYS 0 PASS_WARN_AGE 7`. Edit that part to: 
     - `PASS_MAX_DAYS 30` 
@@ -361,16 +361,75 @@ Note: press `<command>` on your Apple Keyboard & your mouse should re-appear
 ### 🔸 8.2: Configuring the Sudoers Group
 1. `sudo visudo` to open to Sudoers file.
 2. Edit your sudoers file by adding the rest of the defaults so it should read like this:
-   ```Defaults	env_reset
-    Defaults	mail_badpass
-    Defaults	secure_path="/usr/local/sbin:/usr/local/bin:/usr/bin:/sbin:/bin"
-    Defaults	badpass_message="Password is wrong, please try again!"
-    Defaults	passwd_tries=3
-    Defaults	logfile="/var/log/sudo/sudo.log"
-    Defaults	log_input, log_output
-    Defaults	requiretty```
-  
-   - Step 9: Configuring your VM - Script Monitoring & Crontab
-   - Step 10: Self-evaluation Checklist & Testing
-   - Step 11: Retrieve the Signature of your machine’s virtual disk
-   - Step 12: Evaluation Questions & Answers
+   ```
+   Defaults	env_reset
+   Defaults	mail_badpass
+   Defaults	secure_path="/usr/local/sbin:/usr/local/bin:/usr/bin:/sbin:/bin"
+   Defaults	badpass_message="Password is wrong, please try again!"
+   Defaults	passwd_tries=3
+   Defaults	logfile="/var/log/sudo/sudo.log"
+   Defaults	log_input, log_output
+   Defaults	requiretty
+   ```
+
+## 🔷 Step 9: Configuring your VM - Script Monitoring & Crontab
+   
+### 🔸 9.1: Creating and configuring the monitoring.sh script
+1. `sudo apt-get install -y net-tools` to install the netstat tools.
+2. `cd /usr/local/bin/`
+3. `touch monitoring.sh`
+4. `chmod 777 monitoring.sh` to change file permissions to allow full permissions ("7") for -owner -group -all other users.
+5. Open an iTerm2 & type `ssh <your_intra_username>@127.0.0.1 -p 4242`.
+6. `cd /usr/local/bin`
+7. `vim monitoring.sh` and paste into the vim monitoring.sh the following:
+   ```
+   #!/bin/bash
+   arc=$(uname -a)
+   pcpu=$(grep "physical id" /proc/cpuinfo | sort | uniq | wc -l) 
+   vcpu=$(grep "^processor" /proc/cpuinfo | wc -l)
+   fram=$(free -m | awk '$1 == "Mem:" {print $2}')
+   uram=$(free -m | awk '$1 == "Mem:" {print $3}')
+   pram=$(free | awk '$1 == "Mem:" {printf("%.2f"), $3/$2*100}')
+   fdisk=$(df -BG | grep '^/dev/' | grep -v '/boot$' | awk '{ft += $2} END {print ft}')
+   udisk=$(df -BM | grep '^/dev/' | grep -v '/boot$' | awk '{ut += $3} END {print ut}')
+   pdisk=$(df -BM | grep '^/dev/' | grep -v '/boot$' | awk '{ut += $3} {ft+= $2} END {printf("%d"), ut/ft*100}')
+   cpul=$(top -bn1 | grep '^%Cpu' | cut -c 9- | xargs | awk '{printf("%.1f%%"), $1 + $3}')
+   lb=$(who -b | awk '$1 == "system" {print $3 " " $4}')
+   lvmu=$(if [ $(lsblk | grep "lvm" | wc -l) -eq 0 ]; then echo no; else echo yes; fi)
+   ctcp=$(ss -neopt state established | wc -l)
+   ulog=$(users | wc -w)
+   ip=$(hostname -I)
+   mac=$(ip link show | grep "ether" | awk '{print $2}')
+   cmds=$(journalctl _COMM=sudo | grep COMMAND | wc -l)
+   wall "	#Architecture: $arc
+	         #CPU physical: $pcpu
+	         #vCPU: $vcpu
+	         #Memory Usage: $uram/${fram}MB ($pram%)
+	         #Disk Usage: $udisk/${fdisk}Gb ($pdisk%)
+	         #CPU load: $cpul
+	         #Last boot: $lb
+	         #LVM use: $lvmu
+	         #Connections TCP: $ctcp ESTABLISHED
+	         #User log: $ulog
+	         #Network: IP $ip ($mac)
+	         #Sudo: $cmds cmd"
+   ```
+
+8. Save & Exit.
+9. `exit` to exit the iTerm SSH Login.
+10. Go back to your Virtual Machine.
+11. `sudo visudo` to open your sudoers file
+12. Find this line: `%sudo ALL=(ALL:ALL) ALL`. Underneath this line, add `<your_intra_username ALL=(ALL) NOPASSWD: /usr/local/bin/monitoring.sh`
+13. Exit & Save.                                                                                              
+14. `sudo reboot` to reboot sudo.
+15. `sudo /usr/local/bin/monitoring.sh` to execute your script.
+
+### 🔸 9.2: Configuring crontab
+1. `sudo crontab -u root -e` to open the crontab and add a rule
+2. At the end of the crontab, type `*/10 * * * * /usr/local/bin/monitoring.sh` this means that every 10 mins, the monitoring.sh script will be broadcasted.                                                                                           
+## 🔷 Step 10: Self-evaluation Checklist & Testing
+- Step 11: Retrieve the Signature of your machine’s virtual disk
+   - Step 12: Evaluation Questions & Answers 
+                                                                                       
+
+   
