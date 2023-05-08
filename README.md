@@ -361,14 +361,14 @@ Note: press `<command>` on your Apple Keyboard & your mouse should re-appear
 ### 🔸 8.2: Configuring the Sudoers Group
 1. `sudo visudo` to open to Sudoers file.
 2. Edit your sudoers file by adding the rest of the defaults so it should read like this:
-   `Defaults	env_reset
-Defaults	mail_badpass
-Defaults	secure_path="/usr/local/sbin:/usr/local/bin:/usr/bin:/sbin:/bin"
-Defaults	badpass_message="Password is wrong, please try again!"
-Defaults	passwd_tries=3
-Defaults	logfile="/var/log/sudo/sudo.log"
-Defaults	log_input, log_output
-Defaults	requiretty`
+   ```Defaults	env_reset
+    Defaults	mail_badpass
+    Defaults	secure_path="/usr/local/sbin:/usr/local/bin:/usr/bin:/sbin:/bin"
+    Defaults	badpass_message="Password is wrong, please try again!"
+    Defaults	passwd_tries=3
+    Defaults	logfile="/var/log/sudo/sudo.log"
+    Defaults	log_input, log_output
+    Defaults	requiretty```
   
    - Step 9: Configuring your VM - Script Monitoring & Crontab
    - Step 10: Self-evaluation Checklist & Testing
