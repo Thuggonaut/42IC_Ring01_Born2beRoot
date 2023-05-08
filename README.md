@@ -41,7 +41,7 @@
 - Name: e.g. `Born2beRoot`
 - Machine Folder: `/sgoinfre/students/<your_intra_usename>` (_Do not type this in, use the drop down option._)
 - Type: `Linux `
-- Version: `Debian (64-bit)
+- Version: `Debian (64-bit)`
 - `continue`
 
 3. Memory Size:
