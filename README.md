@@ -36,8 +36,12 @@
 
 ## Step 2: Installing your VM
 1. Select `New`
+
 2. Name and operating system:
 - Name: e.g. `Born2beRoot`
-- Machine folder
+- Machine Folder: `/sgoinfre/students/<your_intra_usename>` (Do not type this in, use the drop down option.)
+- Type: `Linux `
+- Version: `Debian (64-bit)
+- `continue`
 
-
+3. 
