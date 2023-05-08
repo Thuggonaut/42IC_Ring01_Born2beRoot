@@ -61,7 +61,7 @@
     - `Continue`
 
 7. File location and size:
-    - `12.00`GB
+    - `8.00`GB
     - `Create`
 
 8. VM Storage:
