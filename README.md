@@ -431,8 +431,8 @@ Note: press `<command>` on your Apple Keyboard & your mouse should re-appear
 Note: I recommend going through the checklist yourself to ensure everything works as it should, before retrieving the signature of your machines' virtual disk.
 
 ### 🔸 10.1: Preliminary tests (for your peer evaluation)
-1. [ ] Git repository is sucessfully cloned.
-[ ]
+- [] Git repository is sucessfully cloned.
+- [] The Git repository contains a signature.txt file.
 	
 	
 - Step 11: Retrieve the Signature of your machine’s virtual disk 
