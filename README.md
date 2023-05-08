@@ -490,7 +490,7 @@ Note: I recommend going through the checklist yourself to ensure everything work
 - [ ] `cd /var/log/sudo` verify the “/var/log/sudo/” directory exists.
 - [ ] `ls` should show sudo.log file exists. 
 - [ ] `cat sudo.log` should display a history of the sudo command executions.
-- [ ] Run any command using `sudo`. Check if the sudo.lg file in the “/var/log/sudo/” directory have been updated.
+- [ ] Run any command using `sudo`. Check if the sudo.log file in the “/var/log/sudo/” directory have been updated.
 
 
 ### 🔸 10.8: UFW
