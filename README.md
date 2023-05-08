@@ -127,10 +127,8 @@
     - Write changes to disk and configure encrypted volumes?: `Yes`
     - Encryption configuration actions: `Create encrypted volumes`
     - Devices to encrypt: using <Space bar> to select/de-select, ensure that: 
-          - `[ ] /dev/sda1` is de-selected
-          - `[*] /dev/sda5` is selected 
-   
-   🔸
+        - `[ ] /dev/sda1` is de-selected
+        - `[*] /dev/sda5` is selected 
     - Select `Done setting up the partitions`
     - Encryption configuration actions: `Finish`
     - Really erase the data on SCSI1 (0,0,0), partition #5 (sda)?: `Yes`
@@ -142,8 +140,8 @@
     - LVM configuration action: `Create volume group`
     - Volume group name: `LVMGroup`
     - Devices for th new volume group:
-          - `[*] /dev/mapper/sda5_crypt` is selected
-          - `[ ] /dev/sda1` is de-selected
+        - `[*] /dev/mapper/sda5_crypt` is selected
+        - `[ ] /dev/sda1` is de-selected
     
    🔸
     - LVM configuration action: `Create logical volume`
