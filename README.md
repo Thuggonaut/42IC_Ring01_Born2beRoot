@@ -19,12 +19,12 @@
 - Step 11: Retrieve the Signature of your machine’s virtual disk
 - Step 12: Evaluation Questions & Answers
 
-## Step 1: Download the Debian installer for your Virtual Machine (VM)
+## 🔷 Step 1: Download the Debian installer for your Virtual Machine (VM)
 ### 1.1: Debian
 1. [Click here to download Debian GNU/Linux](https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/)
 2. Scroll to the bottom of the page and select `debian-mac-xx.x.x-amd64-netinst.iso`
 
-### 1.2: VM Directory (For 42Adelaide Students)
+### 🔸 1.2: VM Directory (For 42Adelaide Students)
 1. In iTerm2:
 - `cd sgoinfre/students`
 - `mkdir <your_intra_usename>`
