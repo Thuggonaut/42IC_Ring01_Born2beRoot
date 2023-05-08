@@ -273,14 +273,46 @@
 2. `apt-get update -y`
 3. `apt-get upgrade -y`
 4. `apt install sudo`
-5. `usermod -aG sudo <your_intra_username>` to add user in the group 'sudo'.
+5. `sudo usermod -aG sudo <your_intra_username>` to add user in the group 'sudo'.
 6. `getent group sudo` to check if user is in sudo group.
 7. `sudo visudo` to open the sudoers file.
 8. Find the line: # User privilege specification. Underneath that line, type `<your_intra_username>  	ALL=(ALL) ALL`
 
 ### 🔸 4.3: Installing Git
-1. `apt-get install git -y`
+1. `sudo apt-get install git -y`
 
 ### 🔸 4.4: Installing Vim
-1. `apt-get install vim -y`
+1. `sudo apt-get install vim -y`
 
+### 🔸 4.5: Installing & Configuring SSH (Secure Shell Host)
+1. `sudo apt install openssh-server`
+2. `sudo systemctl status ssh` to check SSH Server Status.
+3. `sudo vim /etc/ssh/sshd_config`
+4. Find the line #Port22. Edit it to `Port 4242` without the '#' in front of it.
+5: Save and Exit Vim. (_Use `:q` then follow the prompts to save. '^' means `<Ctrl>`_).
+6. `sudo service ssh restart` to restart the SSH Service.
+   
+### 🔸 4.6: Installing & Configuring UFW (Uncomplicated Firewall)
+1. `sudo apt-get install ufw` to install UFW.
+2. `sudo ufw enable` to inable UFW.
+3. `sudo ufw status numbered` to check the status of UFW.
+4. `sudo ufw allow ssh` to configure the Rules.
+5. `sudo ufw allow 4242` to configure the Port Rules.
+6. `sudo ufw status numbered` to check the status of UFW 4242 Port.
+   
+## 🔷 Step 5: Connecting to SSH
+Note: press `<command>` on your Apple Keyboard and your mouse should re-appear
+1. Go to your Virtual Box Program.
+2. Click on your Virtual Machine and go to `Settings`
+    - Go to `Network`
+    - Select `Adapter 1`
+    - Select `Advanced`
+    - Click on `Port Forwarding`
+    - Change the Host Port and Guest Port to `4242`:
+         - Name: Rule 1
+         - Protocol: TCP
+         - Host IP: (_blank_)
+         - Host Port: 4224
+         - Guest IP: (_blank_)
+         - Guest Port: 4242
+   
