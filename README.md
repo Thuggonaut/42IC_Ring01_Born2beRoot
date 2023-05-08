@@ -520,7 +520,7 @@ Note: I recommend going through the checklist yourself to ensure everything work
 
 ## 🔷 Step 11: Retrieve the Signature of your machine’s virtual disk 
 1. `log out` & `Power off` your machine to close your VM. ⚠️ DO NOT RETRIEVE YOUR DISK'S SIGNATURE WITHOUT COMPLETING THIS STEP!⚠️
-2. `cd /sgoinfre/students/<your_intra_username>/<your_VM_name>` to go into the directory where your .vdi file is.
+2. In iTerm2, `cd /sgoinfre/students/<your_intra_username>/<your_VM_name>` to go into the directory where your .vdi file is.
 2. `ls` to view the .vdi file.
 3. `shasum <your_VM_name>.vdi` to retrieve your VM's disk signature.
 4. Copy and paste this into a `signature.txt` file at the root of your Git repository. 
