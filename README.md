@@ -261,6 +261,26 @@
 
 
 ## 🔷 Step 4: Starting & setting up your VM
-1.    
+   
+### 🔸 4.1: Starting up your VM
+1. At every start up, use your encryption password.
+2. You can either:
+    - Login as `root`
+    - Login as `<your_intra_username>, then later use `su -` to log in as root if required.
 
+### 🔸 4.2: Installing Sudo
+1. Ensure you are logged in as root: `su -`
+2. `apt-get update -y`
+3. `apt-get upgrade -y`
+4. `apt install sudo`
+5. `usermod -aG sudo <your_intra_username>` to add user in the group 'sudo'.
+6. `getent group sudo` to check if user is in sudo group.
+7. `sudo visudo` to open the sudoers file.
+8. Find the line: # User privilege specification. Underneath that line, type `<your_intra_username>  	ALL=(ALL) ALL`
+
+### 🔸 4.3: Installing Git
+1. `apt-get install git -y`
+
+### 🔸 4.4: Installing Vim
+1. `apt-get install vim -y`
 
