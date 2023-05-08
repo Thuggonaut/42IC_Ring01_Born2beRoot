@@ -73,8 +73,10 @@
     - `Ok`
 
 ## 🔷 Step 3: Setting up your VM partitions
-1. Go to `Start` (_The green arrow_)
+1. Go to `Start` (_The green arrow_).
+    
     Note: you will only be able to use your Keyboard to operate your Virtual Machine.
+    
     Note: to increase the size of your VM window, go to the menu bar and either:
     - Select `Scaled Mode (Host+C)` then, with your mouse drag the VM window.
     - Select `Virtual Screen 1` then, select `Scale to 200% (autoscaled output)`
