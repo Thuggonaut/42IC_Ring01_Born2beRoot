@@ -254,3 +254,13 @@
 
 11. GRUB boot loader:
     - Install the GRUB boot loader to the master boot record?: `Yes`
+    - Device for boot loader installation: `/dev/sda (ata-VBOX_HARDDISK_xxxxxxxxxx-xxxxxxxx)`
+   
+12. Finish the installation:
+    - Installation complete: `Continue`
+
+
+## 🔷 Step 4: Starting & setting up your VM
+1.    
+
+
