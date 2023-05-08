@@ -20,5 +20,24 @@
 - Step 12: Evaluation Questions & Answers
 
 ## Step 1: Download the Debian installer for your Virtual Machine (VM)
+### 1.1: Debian
 1. [Click here to download Debian GNU/Linux](https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/)
 2. Scroll to the bottom of the page and select `debian-mac-xx.x.x-amd64-netinst.iso`
+
+### 1.2: VM Directory (For 42Adelaide Students)
+1. In iTerm2:
+- `cd sgoinfre/students`
+- `mkdir <your_intra_usename>`
+- `chmod 700 <your_intra_usename>`
+2. Find your Debian download from Step 1.1 and put that download in this `sgoinfre/students/<your_intra_usename>` directory that you have just created (in iTerm2, `open .` to open/find the directory, and drag/drop your Debian download in there). 
+
+### 1.3: Virtual Box
+1. Open the Virtual Box application
+
+## Step 2: Installing your VM
+1. Select `New`
+2. Name and operating system:
+- Name: e.g. `Born2beRoot`
+- Machine folder
+
+
