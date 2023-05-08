@@ -44,4 +44,16 @@
 - Version: `Debian (64-bit)
 - `continue`
 
-3. 
+3. Memory Size:
+- `1024`MB
+- `continue`
+
+4. Hard disk:
+- Select `Create a Virtual Hard Disk Now`
+- `Create`
+
+5. Hard disk file type:
+- Select `VDI (VirtualBox Disk Image)`
+- `Continue`
+
+
