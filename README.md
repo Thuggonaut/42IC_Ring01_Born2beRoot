@@ -368,7 +368,7 @@ Note: press `<command>` on your Apple Keyboard & your mouse should re-appear
     Defaults	passwd_tries=3
     Defaults	logfile="/var/log/sudo/sudo.log"
     Defaults	log_input, log_output
-    Defaults	requiretty'
+    Defaults	requiretty'`
   
    - Step 9: Configuring your VM - Script Monitoring & Crontab
    - Step 10: Self-evaluation Checklist & Testing
