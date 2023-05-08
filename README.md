@@ -20,5 +20,5 @@
 - Step 12: Evaluation Questions & Answers
 
 ## Step 1: Download the Debian installer for your Virtual Machine (VM)
-1. [Click on this link](https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/)
-2. Scroll to the bottom of the page and select > debian-mac-xx.x.x-amd64-netinst.iso
+1. [Click on this link to download Debian GNU/Linux](https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/)
+2. Scroll to the bottom of the page and select 'debian-mac-xx.x.x-amd64-netinst.iso'
