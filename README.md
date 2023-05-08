@@ -89,6 +89,41 @@ Note: to increase the size of your VM window, go to the menu bar and either:
 
 6. Configure the network:
 - Hostname: `<your_intra_username42>` (_ensure "42" is at the end_)
+- Domain name: leave blank
+
+7. Set up users and passwords:
+- Root password: it is reccomended you use the same passwords for all passwords. Write it down should you forget it. 
+- Full name for the new user: personally, I used `<your_intra_username>` without the "42". 
+- Username for your account: `<your_intra_username>` without the "42". 
+- Choose a password for the new user: use the same password as "Root password".
+
+8. Partition disks:
+- Select `Manual`
+- Select `SCSI1 (0,0,0) (sda) 8.6 GB ATA VBOX HARDDISK`
+- Create new empty partition table on this device?: `Yes`
+- Select `pri/log 8.6 GB FREE SPACE`
+- How to use this free space: `Create a new partition`
+- New partition size: `500M`
+- Type for the new partition: `Primary`
+- Location for the new partition: `Beginning`
+- Partition settings: `Mount point:     /`
+- Mount point for this partition: `/boot - static files of the boot loader`
+- Partition settings: `Done setting up the partition`
+
+- Select `pri/log 8.6 GB FREE SPACE`
+- How to use this free space: `Create a new partition`
+- New partition size: `max`
+- Type for the new partition: `Logical`
+- Partition settings: `Mount point:     /`
+- Mount point for this partition: `Do not mount it`
+- Partition settings: `Done setting up the partition`
+
+- Select `Configure encrypted volumes`
+- Write changes to disk and configure encrypted volumes?: `Yes`
+- Encryption configuration actions: `Create encrypted volumes`
+- Devices to encrypt: using <Space bar> to select/de-select, ensure that: 
+  - `[ ] /dev/sda1` is de-selected
+  - `[*] /dev/sda5` is selected 
 - 
 
 
