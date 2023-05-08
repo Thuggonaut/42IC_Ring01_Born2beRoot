@@ -428,7 +428,10 @@ Note: press `<command>` on your Apple Keyboard & your mouse should re-appear
 1. `sudo crontab -u root -e` to open the crontab and add a rule
 2. At the end of the crontab, type `*/10 * * * * /usr/local/bin/monitoring.sh` this means that every 10 mins, the monitoring.sh script will be broadcasted.                                                                                           
 ## 🔷 Step 10: Self-evaluation Checklist & Testing
-- Step 11: Retrieve the Signature of your machine’s virtual disk
+I recommend going through the checklist yourself to ensure everything works as it should, before retrieving the signature of your machines' virtual disk.
+
+### 🔸 10.1
+- Step 11: Retrieve the Signature of your machine’s virtual disk 
    - Step 12: Evaluation Questions & Answers 
                                                                                        
 
