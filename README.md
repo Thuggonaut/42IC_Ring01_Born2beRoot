@@ -526,6 +526,7 @@ Note: I recommend going through the checklist yourself to ensure everything work
 4. Copy and paste this into a `signature.txt` file at the root of your Git repository. 
 5. Clone your VM from VirtualBox.
 5. Repeat steps 2 - 3 to ensure your `signature.txt` is identical to your `<your_VM_name>.vdi` before pushing for evaluation. 
+
 Note: Ensure your evaluator starts your VM Clone for evaluation to prevent your disk's signature from changing for the next evaluation. 
 	
 # 😎 Good luck!
