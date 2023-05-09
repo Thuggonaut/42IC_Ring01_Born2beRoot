@@ -6,7 +6,7 @@
    - The Mandatory part of the subject.pdf involves using the Guided Partitioning Method of the Debian installation. The Bonus part of the subject.pdf involves using the Manual Partitioning Method. This guide has instructions for the Manual Partitioning Method, which I recommend you do from the start, thus passing you both the Mandatory part, and 1/3 of the Bonus part of Born2beRoot. 
 
 ## 🔷 Outline of Steps:
-   - Step 1: Download the Debian installer for your Virtual Machine (VM)
+   - Step 1: [Download the Debian installer for your Virtual Machine (VM)](https://github.com/Thuggonaut/42_IC_Ring01_Born2beRoot#-step-1-download-the-debian-installer-for-your-virtual-machine-vm)
    - Step 2: Installing your VM
    - Step 3: Setting up your VM partitions
    - Step 4: Starting & setting up your VM
