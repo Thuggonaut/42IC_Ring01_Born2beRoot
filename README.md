@@ -67,7 +67,7 @@
 8. VM Storage:
     - Go to `Settings`
     - Select `Storage`
-    - Underneath the list of `Storage Devices` on the left, find and select the `blue 💿 "Empty"`
+    - Underneath the list of `Storage Devices` on the left, find and select the `blue 💿` labeled `"Empty"`
     - Find "Optical Drive" under "Attributes" & click on the drop down menu. Select `Choose a disk file...`
     - Select the Debian Download file (.iso) from your `/sgoinfre/students/<your_intra_usename>` directory. 
     - `Open`
