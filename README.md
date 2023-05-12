@@ -328,7 +328,7 @@ Note: press `<command>` on your Apple Keyboard & your mouse should re-appear
 ## 🔷 Step 6: Configuring your VM - Password Policy
 1. `sudo apt-get install libpam-pwquality` to install Password Quality Checking Library
 2. `sudo vim /etc/pam.d/common-password`
-3. Find this line: `password		requisite		pam_deny.so`
+3. Find this line: `password		requisite		pam_pwquality.so`
     - Add to the end of that line `minlen=10 ucredit=-1 dcredit=-1 maxrepeat=3 reject_username difok=7 enforce_for_root`
     - The line should now look like this: `password  requisite     pam_pwquality.so  retry=3 minlen=10 ucredit=-1 dcredit=-1 maxrepeat=3 reject_username difok=7 enforce_for_root`
 4. Exit & Save Vim
