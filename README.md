@@ -533,7 +533,7 @@ Note: Ensure your evaluator starts your VM Clone for evaluation to prevent your 
 
 
 ## 🔷 Step 12: Evaluation Answers
-### [A Virtual Machine] (VM) is like a computer within a computer.
+#### [A Virtual Machine] (VM) is like a computer within a computer.
 - a software based emulation of a physical computer system.
 - a VM is an isolated environment, seperate from your main computer system. Here, you can run different operating systems, software, applications, experiments, and tests without affecting your main computer.
 - a VM works by mimicking the hardware componenets of a physical computer: CPU, RAM, storage, and network interfaces, creating a virtualised environment that behaves like a physical computer. 
