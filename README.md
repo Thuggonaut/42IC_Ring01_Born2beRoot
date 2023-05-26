@@ -1,7 +1,7 @@
 # 🖥️ 42_IC_Ring01_Born2beRoot
 ## Preface:
    - This is a guide to the Born2beRoot project, & was written using resources from several other guides, therefore the credit is to them.
-   - The purpose of re-writing this updated guide is to edit some errors that I've come across using some of the guides, & help prevent issues that I've had to troubleshoot.
+   - The purpose of re-writing this updated guide is to edit some discrpencies that I've come across using some of the guides, & help prevent issues that I've had to troubleshoot.
    - Debian is the chosen Operating System for this project.
    - The Mandatory part of the subject.pdf involves using the Guided Partitioning Method of the Debian installation. The Bonus part of the subject.pdf involves using the Manual Partitioning Method. This guide has instructions for the Manual Partitioning Method, which I recommend you do from the start, thus passing you both the Mandatory part, and 1/3 of the Bonus part of Born2beRoot. 
 
@@ -17,6 +17,7 @@
    - Step 9: [Configuring your VM - Script Monitoring & Crontab](https://github.com/Thuggonaut/42_IC_Ring01_Born2beRoot#-step-9-configuring-your-vm---script-monitoring--crontab)
    - Step 10: [Self-evaluation Checklist & Testing](https://github.com/Thuggonaut/42_IC_Ring01_Born2beRoot#-step-10-self-evaluation-checklist--testing)
    - Step 11: [Retrieve the Signature of your machine’s virtual disk](https://github.com/Thuggonaut/42_IC_Ring01_Born2beRoot#-step-11-retrieve-the-signature-of-your-machines-virtual-disk)
+   - Step 12: [Evaluation Answers]
 
 ## 🔷 Step 1: Download the Debian installer for your Virtual Machine (VM)
 
@@ -529,5 +530,8 @@ Note: I recommend going through the checklist yourself to ensure everything work
 5. Repeat steps 2 - 3 to ensure your `signature.txt` is identical to your `<your_VM_name>.vdi` before pushing for evaluation. 
 
 Note: Ensure your evaluator starts your VM Clone for evaluation to prevent your disk's signature from changing for the next evaluation. 
+
+
+## 🔷 Step 12: Evaluation Answers
 	
 # 😎 Good luck!
