@@ -602,7 +602,7 @@ Note: Ensure your evaluator starts your VM Clone for evaluation to prevent your 
 - is used to broadcast a message (i.e. the monitoring.sh script) to all users currently logged on to the system. [*Back to Evaluation Checklist*](https://github.com/Thuggonaut/42_IC_Ring01_Born2beRoot#-step-10-self-evaluation-checklist--testing)
 
 #### Cron 
-- from the Greek word "chronos", means the meansure of time.
+- from the Greek word "chronos", means the measure of time.
 - is a utility program that enables the scheduling of commands or scripts to run automatically at specified intervals. 
 - crontab is the configuration file where you can specify the commands to run and when. 
 - each asterisk *, accounts for: minute; hour; day; month; day of the week, in this order. [*Back to Evaluation Checklist*](https://github.com/Thuggonaut/42_IC_Ring01_Born2beRoot#-step-10-self-evaluation-checklist--testing)
