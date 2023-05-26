@@ -533,9 +533,18 @@ Note: Ensure your evaluator starts your VM Clone for evaluation to prevent your 
 
 
 ## 🔷 Step 12: Evaluation Answers
-#### [A Virtual Machine] (VM) is like a computer within a computer.
+#### [A Virtual Machine] (VM)
+- is like a computer within a computer.
 - a software based emulation of a physical computer system.
 - a VM is an isolated environment, seperate from your main computer system. Here, you can run different operating systems, software, applications, experiments, and tests without affecting your main computer.
-- a VM works by mimicking the hardware componenets of a physical computer: CPU, RAM, storage, and network interfaces, creating a virtualised environment that behaves like a physical computer. 
+- a VM works by mimicking the hardware componenets of a physical computer: CPU, RAM, storage, and network interfaces, creating a virtualised environment that behaves like a physical computer. *[Back to Evaluation Checklist]*(https://github.com/Thuggonaut/42_IC_Ring01_Born2beRoot#-step-10-self-evaluation-checklist--testing)
+	
+#### [The differences between Rocky and Debian]
+- Debian has a community driven development model and a large community of contributers and users. Debian aims to be a universal Operating System, suitable for a wide range of use cases including desktop systems and personal servers. It adheres to the Free Software Principles (FSP): freedom to run, study, modify, and distribute software. 
+- Rocky is led by the Rocky Enterprise Software Foundation that oversees the development and distribution of Rocky Linux. Rocky provides an enterprise-grade linux that serves as a drop-in replacement for CentOS. It is designed, developed and tested to meet the demands of larger scale businesses and organisations.
+	
+#### [The subject.pdf reccommends Debian for beginners] in system administration, as setting up Rocky is more complex.
+Debian is user-friendly.
+Debian being older than Rockey, has a larger, active community of users and developers which means there is access to extensive documentation and resources for troubleshooting.
 	
 # 😎 Good luck!
