@@ -429,7 +429,9 @@ Note: press `<command>` on your Apple Keyboard & your mouse should re-appear
 
 ### 🔸 9.2: Configuring crontab
 1. `sudo crontab -u root -e` to open the crontab and add a rule
-2. At the end of the crontab, type `*/10 * * * * /usr/local/bin/monitoring.sh` this means that every 10 mins, the monitoring.sh script will be broadcasted.                                                                                           
+2. At the end of the crontab, type `*/10 * * * * /usr/local/bin/monitoring.sh` this means that every 10 mins, the monitoring.sh script will be broadcasted.
+
+
 ## 🔷 Step 10: Self-evaluation Checklist & Testing
 Note: I recommend going through the checklist yourself to ensure everything works as it should, before retrieving the signature of your machines virtual disk.
 
@@ -452,7 +454,7 @@ Note: I recommend going through the checklist yourself to ensure everything work
 
 ### 🔸 10.3: Mandatory Part (for your peer evaluation)
 - [ ] During the defense, a script must display all information every 10 minutes.
-- [ ] What is a Virtual Machine, & how does it work?
+- [ ] What is a Virtual Machine, & how does it work[?](https://github.com/Thuggonaut/42IC_Ring01_Born2beRoot/blob/main/README.md#a-virtual-machine-vm)
 - [ ] What are the differences between Rocky & Debian?
 - [ ] What is your choice of operating system & why?
 - [ ] For Debian: what are the difference between aptitude and apt? What is APPArmor?
