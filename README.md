@@ -454,15 +454,16 @@ Note: I recommend going through the checklist yourself to ensure everything work
 
 ### 🔸 10.3: Mandatory Part (for your peer evaluation)
 - [ ] During the defense, a script must display all information every 10 minutes.
-- [ ] What is a Virtual Machine, & how does it work[?](https://github.com/Thuggonaut/42IC_Ring01_Born2beRoot/blob/main/README.md#a-virtual-machine-vm)
-- [ ] What are the differences between Rocky & Debian?
-- [ ] What is your choice of operating system & why?
-- [ ] For Debian: what are the difference between aptitude and apt? What is APPArmor?
+- [ ] [What is a Virtual Machine, & how does it work?](https://github.com/Thuggonaut/42IC_Ring01_Born2beRoot/blob/main/README.md#a-virtual-machine-vm)
+- [ ] [What are the differences between Rocky & Debian?](https://github.com/Thuggonaut/42IC_Ring01_Born2beRoot/blob/main/README.md#the-differences-between-rocky-and-debian)
+- [ ] [What is your choice of operating system & why?](https://github.com/Thuggonaut/42IC_Ring01_Born2beRoot/blob/main/README.md#the-subjectpdf-reccommends-debian)
+- [ ] [For Debian: what are the difference between aptitude and apt?](https://github.com/Thuggonaut/42IC_Ring01_Born2beRoot/blob/main/README.md#the-difference-between-aptitude-and-apt)
+- [ ] [What is APPArmor?](https://github.com/Thuggonaut/42IC_Ring01_Born2beRoot/blob/main/README.md#apparmor)
 - [ ] All explanations are satisfactory (or evaluation stops here).
-- [ ] What is LVM & what does it do?
-- [ ] What is SSH & the value of using it?
-- [ ] What is UFW & the value of using it?
-- [ ] What is sudo?
+- [ ] [What is LVM & what does it do?](https://github.com/Thuggonaut/42IC_Ring01_Born2beRoot/blob/main/README.md#ssh)
+- [ ] [What is SSH & the value of using it?](https://github.com/Thuggonaut/42IC_Ring01_Born2beRoot/blob/main/README.md#ssh)
+- [ ] [What is UFW & the value of using it?](https://github.com/Thuggonaut/42IC_Ring01_Born2beRoot/blob/main/README.md#ufw)
+- [ ] [What is sudo?](https://github.com/Thuggonaut/42IC_Ring01_Born2beRoot/blob/main/README.md#short-for-superuser-do-sudo)
 
 	
 ### 🔸 10.4: Users & groups
@@ -476,8 +477,8 @@ Note: I recommend going through the checklist yourself to ensure everything work
 
 ### 🔸 10.5: Password policy
 - [ ] `sudo chage -l <username>` checks the newly created user password follows the required policy (30 days max, 2 days min, 7 days warning).
-- [ ] How do you implement the password policy?
-- [ ] What are the advantages & disadvantages of the password policy?
+- [ ] [How do you implement the password policy?](https://github.com/Thuggonaut/42IC_Ring01_Born2beRoot/blob/main/README.md#to-set-up-the-password-policy)
+- [ ][What are the advantages & disadvantages of the password policy?](https://github.com/Thuggonaut/42IC_Ring01_Born2beRoot/blob/main/README.md#the-advantages-of-the-password-policy)
 
 	
 ### 🔸 10.6: Hostname and partitions
@@ -490,7 +491,7 @@ Note: I recommend going through the checklist yourself to ensure everything work
 	
 ### 🔸 10.7: Sudo
 - [ ] `sudo visudo` the student shows how to access the sudoers file.	
-- [ ] What is the sudoers file, & its purpose? 
+- [ ] [What is the sudoers file, & its purpose?](https://github.com/Thuggonaut/42IC_Ring01_Born2beRoot/blob/main/README.md#the-sudoers-file)
 - [ ] `cd /var/log/sudo` verify the “/var/log/sudo/” directory exists.
 - [ ] `ls` should show sudo.log file exists. 
 - [ ] `cat sudo.log` should display a history of the sudo command executions.
@@ -512,10 +513,10 @@ Note: I recommend going through the checklist yourself to ensure everything work
 
 	
 ### 🔸 10.10: Script Monitoring
-- [ ] What is the `monitoring.sh script`?
-- [ ] What is the `wall` command?
+- [ ] [What is the `monitoring.sh script`?](https://github.com/Thuggonaut/42IC_Ring01_Born2beRoot/blob/main/README.md#the-monitoringsh-script)
+- [ ] [What is the `wall` command?](https://github.com/Thuggonaut/42IC_Ring01_Born2beRoot/blob/main/README.md#the-wall-command)
 - [ ] Ask to see the student's code for the script. `cd /usr/local/bin` then, `vim monitoring.sh`
-- [ ] What is Cron & its purpose?
+- [ ] [What is Cron & its purpose?](https://github.com/Thuggonaut/42IC_Ring01_Born2beRoot/blob/main/README.md#cron)
 - [ ] `sudo crontab -u root -e` (change the `10` value to `1`)
 - [ ] The student being evaluated should make the script stop or start running without modifying the script itself. To check this, `sudo reboot` to restart the VM.
 	- `sudo /etc/init.d/cron stop`	
@@ -535,72 +536,72 @@ Note: Ensure your evaluator starts your VM Clone for evaluation to prevent your 
 
 
 ## 🔷 Step 12: Evaluation Answers
-#### [A Virtual Machine] (VM)
+#### A Virtual Machine (VM)
 - is like a computer within a computer.
 - a software based emulation of a physical computer system.
 - a VM is an isolated environment, seperate from your main computer system. Here, you can run different operating systems, software, applications, experiments, and tests without affecting your main computer.
 - a VM works by mimicking the hardware componenets of a physical computer: CPU, RAM, storage, and network interfaces, creating a virtualised environment that behaves like a physical computer. [*Back to Evaluation Checklist*](https://github.com/Thuggonaut/42_IC_Ring01_Born2beRoot#-step-10-self-evaluation-checklist--testing)
 	
-#### [The differences between Rocky and Debian]
+#### The differences between Rocky and Debian
 - Debian has a community driven development model and a large community of contributers and users. Debian aims to be a universal Operating System, suitable for a wide range of use cases including desktop systems and personal servers. It adheres to the Free Software Principles (FSP): freedom to run, study, modify, and distribute software. 
 - Rocky is led by the Rocky Enterprise Software Foundation that oversees the development and distribution of Rocky Linux. Rocky provides an enterprise-grade linux that serves as a drop-in replacement for CentOS. It is designed, developed and tested to meet the demands of larger scale businesses and organisations. [*Back to Evaluation Checklist*](https://github.com/Thuggonaut/42_IC_Ring01_Born2beRoot#-step-10-self-evaluation-checklist--testing)
 	
-#### [The subject.pdf reccommends Debian]
+#### The subject.pdf reccommends Debian
 - for beginners in system administration, as setting up Rocky is more complex.
 - Debian is user-friendly.
 - Debian being older than Rockey, has a larger, active community of users and developers which means there is access to extensive documentation and resources for troubleshooting. [*Back to Evaluation Checklist*](https://github.com/Thuggonaut/42_IC_Ring01_Born2beRoot#-step-10-self-evaluation-checklist--testing)
 	
-#### [the difference between aptitude and apt] 
+#### The difference between aptitude and apt 
 - aptitude more advanced and interactive, while apt is simpler and more straightforward.
 - the main difference between aptitude and apt is how they handle package dependencies (other software needed for a program to work). aptitude is smarter at resolving complex dependencies and finding the best solution. It can suggest alternative options if there are conflicts between packages. apt, on the other hand, is simpler and more straightforward in resolving dependencies.
 - Another difference is how you use them. apt has shorter and easier-to-remember commands, like `apt update` or `apt install`, while aptitude uses slightly different commands like `aptitude update` or `aptitude install`.
 - aptitude has a special text interface that lets you browse and search for packages interactively, while apt doesn't have that feature. [*Back to Evaluation Checklist*](https://github.com/Thuggonaut/42_IC_Ring01_Born2beRoot#-step-10-self-evaluation-checklist--testing)
 	
-#### [AppArmor] 
+#### AppArmor 
 - provides an additional layer of defense by restricting an application's privileges and actions to only what is explicitly permitted by its security policy. 
 - using AppArmor, system administrators and developers can enhance the security of their systems by limiting the potential impact of security breaches or unauthorized access to sensitive resources. It adds an extra layer of protection to help prevent applications from causing harm or accessing data they shouldn't have access to. [*Back to Evaluation Checklist*](https://github.com/Thuggonaut/42_IC_Ring01_Born2beRoot#-step-10-self-evaluation-checklist--testing)
 
-#### [LVM] 
+#### LVM 
 - stands for Logical Volume Manager.
 - it allows the manipulation of partitions or logical volume on a storage device. [*Back to Evaluation Checklist*](https://github.com/Thuggonaut/42_IC_Ring01_Born2beRoot#-step-10-self-evaluation-checklist--testing)
 	
-#### [SSH] 
+#### SSH
 - stands for Secure Shell.
 - an authentication mechanism between a client and a host.
 - uses encryption techniques so that all communication between clients and hosts is done in encyypted form, preventing unauthorised access, protecting sensitive data. [*Back to Evaluation Checklist*](https://github.com/Thuggonaut/42_IC_Ring01_Born2beRoot#-step-10-self-evaluation-checklist--testing)
 	
-#### [UFW] 
+#### UFW 
 - stands for Uncomplicated Firewall.
 - an interface that modifies the firewall of a device without compromising security.
 - used to configure which ports to allow connections, and which ports to close. 
 - useful in conjunction with SSH. [*Back to Evaluation Checklist*](https://github.com/Thuggonaut/42_IC_Ring01_Born2beRoot#-step-10-self-evaluation-checklist--testing)
 	
-#### [Short for "superuser do", `sudo`]
-- is a command used to execute other commands requiring higher priveledges and permissions. 
+#### Short for "superuser do"
+- `sudo` is a command used to execute other commands requiring higher priveledges and permissions. 
 - allows a user with admin priveleges to temporarily gain "root" or superuser priveledges. [*Back to Evaluation Checklist*](https://github.com/Thuggonaut/42_IC_Ring01_Born2beRoot#-step-10-self-evaluation-checklist--testing)
 	
-#### [To set up the password policy]
+#### To set up the password policy
 - the command is `sudo vim /etc/login.defs`. Here we can adjust the frquency of:
 	- the maximum number of days before a password expiry.
 	- the minimum number of days allowed before the modification of a password.
 	- the number of days before a user receives a warning message their password is to expire. [*Back to Evaluation Checklist*](https://github.com/Thuggonaut/42_IC_Ring01_Born2beRoot#-step-10-self-evaluation-checklist--testing)
 	
-#### [The advantages of the password policy]
+#### The advantages of the password policy
 - include increasing the security of the system.
 - the disadvantages include the challenge of having to change passwords if frequent, and it can be difficult to create new and different passwords each time. [*Back to Evaluation Checklist*](https://github.com/Thuggonaut/42_IC_Ring01_Born2beRoot#-step-10-self-evaluation-checklist--testing)
 	
-#### [The sudoers file] 
+#### The sudoers file 
 - contains the configurations of user priveledges.
 - using the command `sudo visudo` opens the sudoer's fie, and here, you can edit user priveledges. [*Back to Evaluation Checklist*](https://github.com/Thuggonaut/42_IC_Ring01_Born2beRoot#-step-10-self-evaluation-checklist--testing)
 	
-#### [The monitoring.sh script] 
+#### The monitoring.sh script 
 - is used to monitor the performance and status of a server or system.
 - it gathers data on system resource utilizaiton (e.g. CPU, memory, disk usage), network traffic and other metrics. [*Back to Evaluation Checklist*](https://github.com/Thuggonaut/42_IC_Ring01_Born2beRoot#-step-10-self-evaluation-checklist--testing)
 	
-#### [The `wall` command] 
+#### The `wall` command
 - is used to broadcast a message (i.e. the monitoring.sh script) to all users currently logged on to the system. 
 
-#### [Cron] 
+#### Cron 
 - from the Greek word "chronos", means the meansure of time.
 - is a utility program that enables the scheduling of commands or scripts to run automatically at specified intervals. 
 - crontab is the configuration file where you can specify the commands to run and when. 
