@@ -537,7 +537,7 @@ Note: Ensure your evaluator starts your VM Clone for evaluation to prevent your 
 - is like a computer within a computer.
 - a software based emulation of a physical computer system.
 - a VM is an isolated environment, seperate from your main computer system. Here, you can run different operating systems, software, applications, experiments, and tests without affecting your main computer.
-- a VM works by mimicking the hardware componenets of a physical computer: CPU, RAM, storage, and network interfaces, creating a virtualised environment that behaves like a physical computer. *[Back to Evaluation Checklist]*(https://github.com/Thuggonaut/42_IC_Ring01_Born2beRoot#-step-10-self-evaluation-checklist--testing)
+- a VM works by mimicking the hardware componenets of a physical computer: CPU, RAM, storage, and network interfaces, creating a virtualised environment that behaves like a physical computer. [*Back to Evaluation Checklist*](https://github.com/Thuggonaut/42_IC_Ring01_Born2beRoot#-step-10-self-evaluation-checklist--testing)
 	
 #### [The differences between Rocky and Debian]
 - Debian has a community driven development model and a large community of contributers and users. Debian aims to be a universal Operating System, suitable for a wide range of use cases including desktop systems and personal servers. It adheres to the Free Software Principles (FSP): freedom to run, study, modify, and distribute software. 
