@@ -457,7 +457,7 @@ Note: I recommend going through the checklist yourself to ensure everything work
 - [ ] [What is a Virtual Machine, & how does it work?](https://github.com/Thuggonaut/42IC_Ring01_Born2beRoot/blob/main/README.md#a-virtual-machine-vm)
 - [ ] [What are the differences between Rocky & Debian?](https://github.com/Thuggonaut/42IC_Ring01_Born2beRoot/blob/main/README.md#the-differences-between-rocky-and-debian)
 - [ ] [What is your choice of operating system & why?](https://github.com/Thuggonaut/42IC_Ring01_Born2beRoot/blob/main/README.md#the-subjectpdf-reccommends-debian)
-- [ ] [For Debian: what are the difference between aptitude and apt?](https://github.com/Thuggonaut/42IC_Ring01_Born2beRoot/blob/main/README.md#the-difference-between-aptitude-and-apt)
+- [ ] [For Debian: what are the differences between aptitude and apt?](https://github.com/Thuggonaut/42IC_Ring01_Born2beRoot/blob/main/README.md#the-difference-between-aptitude-and-apt)
 - [ ] [What is APPArmor?](https://github.com/Thuggonaut/42IC_Ring01_Born2beRoot/blob/main/README.md#apparmor)
 - [ ] All explanations are satisfactory (or evaluation stops here).
 - [ ] [What is LVM & what does it do?](https://github.com/Thuggonaut/42IC_Ring01_Born2beRoot/blob/main/README.md#ssh)
