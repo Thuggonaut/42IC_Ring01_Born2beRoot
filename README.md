@@ -17,7 +17,7 @@
    - Step 9: [Configuring your VM - Script Monitoring & Crontab](https://github.com/Thuggonaut/42_IC_Ring01_Born2beRoot#-step-9-configuring-your-vm---script-monitoring--crontab)
    - Step 10: [Self-evaluation Checklist & Testing](https://github.com/Thuggonaut/42_IC_Ring01_Born2beRoot#-step-10-self-evaluation-checklist--testing)
    - Step 11: [Retrieve the Signature of your machine’s virtual disk](https://github.com/Thuggonaut/42_IC_Ring01_Born2beRoot#-step-11-retrieve-the-signature-of-your-machines-virtual-disk)
-   - Step 12: [Evaluation Answers]
+   - Step 12: [Evaluation Answers](https://github.com/Thuggonaut/42IC_Ring01_Born2beRoot/blob/main/README.md#-step-12-evaluation-answers)
 
 ## 🔷 Step 1: Download the Debian installer for your Virtual Machine (VM)
 
@@ -533,5 +533,9 @@ Note: Ensure your evaluator starts your VM Clone for evaluation to prevent your 
 
 
 ## 🔷 Step 12: Evaluation Answers
+### [A Virtual Machine] (VM) is like a computer within a computer.
+- a software based emulation of a physical computer system.
+- a VM is an isolated environment, seperate from your main computer system. Here, you can run different operating systems, software, applications, experiments, and tests without affecting your main computer.
+- a VM works by mimicking the hardware componenets of a physical computer: CPU, RAM, storage, and network interfaces, creating a virtualised environment that behaves like a physical computer. 
 	
 # 😎 Good luck!
