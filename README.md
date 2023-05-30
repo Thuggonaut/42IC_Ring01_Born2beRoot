@@ -315,7 +315,7 @@ Note: press `<command>` on your Apple Keyboard & your mouse should re-appear
          - Name: Rule 1
          - Protocol: TCP
          - Host IP: (_blank_)
-         - Host Port: 4224
+         - Host Port: 4242
          - Guest IP: (_blank_)
          - Guest Port: 4242
     - `Ok`
