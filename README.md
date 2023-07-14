@@ -347,7 +347,7 @@ Note: press `<command>` on your Apple Keyboard & your mouse should re-appear
 2. `getent group` to check if the group has been created.
 
 ### 🔸 7.2: Group allocation
-1. `sudo usermod -aG user42 <your_intra_username> to add your username to the group 'user42' as per subject requirements. 
+1. `sudo usermod -aG user42 <your_intra_username>` to add your username to the group 'user42' as per subject requirements. 
 2. `getent group user42` to check if the user is in the group.
 3. `cut -d: -f1 /etc/passwd` to check all local users.
 
