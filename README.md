@@ -320,18 +320,21 @@ Note: press `<command>` on your Apple Keyboard & your mouse should re-appear
          - Guest Port: 4242
     - `Ok`
 3. Go back to your Virtual Machine.
-4. `sudo systemctl restart ssh` to restart your SSH Server.
-5. `sudo service sshd status` to check your SSH Status.
-6. Open an iTerm & type `ssh <your_intra_username>@127.0.0.1 -p 4242`
+4. check the file sshd_config via sudo vi /etc/ssh/sshd_config and make sure this two lines are uncomment and with this parameters:
+ - 13 Port 4242
+ - 32 PermitRootLogin no
+5. `sudo systemctl restart ssh` to restart your SSH Server.
+6. `sudo service sshd status` to check your SSH Status.
+7. Open an iTerm & type `ssh <your_intra_username>@127.0.0.1 -p 4242`
     - Note: In case an error occurs, type `rm ~/.ssh/known_hosts` in your iTerm & then retype `ssh <your_intra_username>@127.0.0.1 -p 4242`
-7. Type `exit` to quit your SSH iTerm Connection.
+8. Type `exit` to quit your SSH iTerm Connection.
 
 ## 🔷 Step 6: Configuring your VM - Password Policy
 1. `sudo apt-get install libpam-pwquality` to install Password Quality Checking Library
 2. `sudo vim /etc/pam.d/common-password`
 3. Find this line: `password		requisite		pam_pwquality.so`
-    - Add to the end of that line `minlen=10 ucredit=-1 dcredit=-1 maxrepeat=3 reject_username difok=7 enforce_for_root`
-    - The line should now look like this: `password  requisite     pam_pwquality.so  retry=3 minlen=10 ucredit=-1 dcredit=-1 maxrepeat=3 reject_username difok=7 enforce_for_root`
+    - Add to the end of that line `minlen=10 ucredit=-1 dcredit=-1 lcredit=-1 maxrepeat=3 reject_username difok=7 enforce_for_root`
+    - The line should now look like this: `password  requisite     pam_pwquality.so  retry=3 minlen=10 ucredit=-1 dcredit=-1 lcredit=-1 maxrepeat=3 reject_username difok=7 enforce_for_root`
 4. Exit & Save Vim
 5. `sudo vim /etc/login.defs` to configure the Password Policy.
 6. Find this part `PASS_MAX_DAYS 9999 PASS_MIN_DAYS 0 PASS_WARN_AGE 7`. Edit that part to: 
