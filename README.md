@@ -291,8 +291,8 @@
 1. `sudo apt install openssh-server`
 2. `sudo systemctl status ssh` to check SSH Server Status.
 3. `sudo vim /etc/ssh/sshd_config`
-4. Find the line #Port22. Edit it to `Port 4242` without the '#' in front of it.
-5: Save and Exit Vim. (_Use `:q` then follow the prompts to save. '^' means `<Ctrl>`_).
+4. Find the line `#Port22`. Edit it to `Port 4242` without the '#' in front of it.
+5. Save and Exit Vim. (_Use `:q` then follow the prompts to save. `^` means `<Ctrl>`_).
 6. `sudo service ssh restart` to restart the SSH Service.
    
 ### 🔸 4.6: Installing & Configuring UFW (Uncomplicated Firewall)
@@ -320,9 +320,9 @@ Note: press `<command>` on your Apple Keyboard & your mouse should re-appear
          - Guest Port: 4242
     - `Ok`
 3. Go back to your Virtual Machine.
-4. check the file sshd_config via sudo vi /etc/ssh/sshd_config and make sure this two lines are uncomment and with this parameters:
- - 13 Port 4242
- - 32 PermitRootLogin no
+4. Check the file sshd_config via `sudo vim /etc/ssh/sshd_config` and make sure these two lines are uncommented and with the parameters:
+	- `13 Port 4242`
+	- `32 PermitRootLogin no`
 5. `sudo systemctl restart ssh` to restart your SSH Server.
 6. `sudo service sshd status` to check your SSH Status.
 7. Open an iTerm & type `ssh <your_intra_username>@127.0.0.1 -p 4242`
@@ -512,7 +512,7 @@ Note: I recommend going through the checklist yourself to ensure everything work
 ### 🔸 10.9: SSH
 - [ ] `sudo service ssh status` checks if its active & uses port 4242.
 - [ ] In an iterm2, `ssh <new_user>@127.0.0.1 -p 4242` evaluator to connect to SSH with their username. If connection successful, `exit` to exit the connection. 
-- [ ] `ssh <your_intra_username42>@127.0.0.1 -p 4242` checks that the root user cannot connect to SSH. An error message "permission denied" should be displayed.
+- [ ] `ssh <your_intra_username42>@127.0.0.1 -p 4242` checks that the root user cannot connect to SSH. An error message "permission denied" should be displayed. Recall, `<your_intra_username42>` with the `42` in it is the root user. This is easily forgotten.
 
 	
 ### 🔸 10.10: Script Monitoring
